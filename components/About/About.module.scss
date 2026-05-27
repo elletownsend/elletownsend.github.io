@@ -71,11 +71,13 @@
 }
 
 .list {
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
 
   li {
+    list-style: none;
     font-family: var(--font-cormorant), $font-serif;
     font-size: clamp(1rem, 1.3vw, 1.05rem);
     color: $text-dark;
@@ -93,35 +95,18 @@
 
 // ── Collage elements ──────────────────────────────────────────────────────────
 
-// Narrow vertical torn strip — right edge of section, overlapping outside
+// Torn bookshelf strip — full-height on the far right edge
 .tornBookshelf {
   position: absolute;
-  right: -5px;
-  top: -15px;
-  width: 75px;
-  height: 112%;
-  pointer-events: none;
-  z-index: 3;
-
-  @include respond-to('tablet') {
-    display: none;
-  }
-}
-
-// Wide diagonal torn piece — lower area, straddling the photo/text boundary
-.tornArchitecture {
-  position: absolute;
-  bottom: -20px;
-  left: 28%;
-  width: 310px;
-  height: 310px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 160px;
   pointer-events: none;
   z-index: 3;
 
   @include respond-to('laptop') {
-    width: 220px;
-    height: 220px;
-    left: 24%;
+    width: 120px;
   }
 
   @include respond-to('tablet') {

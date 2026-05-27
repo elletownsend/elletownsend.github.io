@@ -4,6 +4,7 @@
 .contact {
   min-height: 65vh;
   position: relative;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding: 4rem $section-pad-h;
@@ -72,6 +73,29 @@
 
   @include respond-to('tablet') {
     align-items: flex-start;
+  }
+}
+
+// ── Torn architecture collage — top-right corner ─────────────────────────────
+.tornArchitecture {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 420px;
+  height: 520px;
+  pointer-events: none;
+  z-index: 2;
+
+  @include respond-to('laptop') {
+    width: 320px;
+    height: 400px;
+  }
+
+  @include respond-to('tablet') {
+    width: 220px;
+    height: 280px;
+    top: -10px;
+    right: -10px;
   }
 }
 

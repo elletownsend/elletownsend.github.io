@@ -45,18 +45,10 @@ export default function About() {
           src="/images/torn-bookshelf.png"
           alt=""
           fill
-          style={{ objectFit: 'contain', objectPosition: 'top center' }}
+          style={{ objectFit: 'fill' }}
         />
       </div>
 
-      <div className={styles.tornArchitecture} aria-hidden="true">
-        <Image
-          src="/images/torn-architecture.png"
-          alt=""
-          fill
-          style={{ objectFit: 'contain', objectPosition: 'center center' }}
-        />
-      </div>
     </section>
   );
 }
