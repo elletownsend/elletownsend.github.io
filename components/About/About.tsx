@@ -1,0 +1,62 @@
+import Image from 'next/image';
+import styles from './About.module.scss';
+
+export default function About() {
+  return (
+    <section id="about" className={styles.about}>
+      {/* ── Left: editorial photo ── */}
+      <div className={styles.imageCol}>
+        <Image
+          src="/images/palace-interior-2.png"
+          alt="Ornate palace interior"
+          fill
+          sizes="(max-width: 768px) 100vw, 45vw"
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          priority
+        />
+      </div>
+
+      {/* ── Right: bio text ── */}
+      <div className={styles.contentCol}>
+        <div className={styles.block}>
+          <span className={styles.label}>Bio</span>
+          <p className={styles.body}>
+            I&rsquo;m a creative at heart, weaving digital masterpieces for brands of all
+            sizes. From small businesses to established brands, I help bring your vision
+            to life through strategic design. I work with clients across various industries,
+            delivering designs that inspire, engage, and create results.
+          </p>
+        </div>
+
+        <div className={styles.block}>
+          <span className={styles.label}>What I Do Best</span>
+          <ul className={styles.list}>
+            <li>Brand identity</li>
+            <li>Web design</li>
+            <li>Web development</li>
+            <li>Digital design</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* ── Collage overlays ── */}
+      <div className={styles.tornBookshelf} aria-hidden="true">
+        <Image
+          src="/images/torn-bookshelf.png"
+          alt=""
+          fill
+          style={{ objectFit: 'contain', objectPosition: 'top center' }}
+        />
+      </div>
+
+      <div className={styles.tornArchitecture} aria-hidden="true">
+        <Image
+          src="/images/torn-architecture.png"
+          alt=""
+          fill
+          style={{ objectFit: 'contain', objectPosition: 'center center' }}
+        />
+      </div>
+    </section>
+  );
+}

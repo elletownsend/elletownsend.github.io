@@ -1,0 +1,112 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  min-height: 100vh;
+  background-color: $black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  // Extra left padding reserves space for the fixed scroll nav (visible >1024px)
+  padding: 0 $section-pad-h 0 7.5rem;
+  position: relative;
+  overflow: hidden;
+
+  @include respond-to('laptop') {
+    // Nav hidden below 1024px — revert to standard padding
+    padding: 0 2rem 0 2rem;
+    grid-template-columns: 55% 1fr;
+  }
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 7rem $section-pad-h-mobile 3rem;
+    gap: 2.5rem;
+  }
+}
+
+// ── Text column ───────────────────────────────────────────────────────────────
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  z-index: 1;
+  padding-right: 2rem;
+
+  @include respond-to('tablet') {
+    order: 1;
+    padding-right: 0;
+  }
+}
+
+.nameTag {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 2;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.headline {
+  font-family: var(--font-cormorant), $font-serif;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+  font-weight: 300;
+  line-height: 1.02;
+  color: $white;
+  letter-spacing: -0.02em;
+
+  em {
+    font-style: italic;
+    font-weight: 300;
+    color: $cream;
+  }
+
+  @include respond-to('tablet') {
+    font-size: clamp(2.8rem, 8vw, 4rem);
+  }
+}
+
+.cursor {
+  display: inline-block;
+  color: $cream;
+  font-style: normal;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+// ── Sculpture column ──────────────────────────────────────────────────────────
+.sculptureWrapper {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @include respond-to('tablet') {
+    height: 55vw;
+    order: 2;
+    max-height: 380px;
+  }
+
+  @include respond-to('mobile') {
+    height: 280px;
+  }
+}
+
+.sculptureLoading {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}

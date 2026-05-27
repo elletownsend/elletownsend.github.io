@@ -1,0 +1,89 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contact {
+  min-height: 65vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem $section-pad-h;
+
+  @include respond-to('laptop') {
+    padding: 4rem 3rem;
+  }
+
+  @include respond-to('tablet') {
+    padding: 4rem $section-pad-h-mobile;
+    min-height: 55vw;
+  }
+
+  @include respond-to('mobile') {
+    min-height: 70vh;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.heading {
+  font-family: var(--font-cormorant), $font-serif;
+  font-size: clamp(3rem, 7.5vw, 8rem);
+  font-weight: 300;
+  color: $white;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+
+  @include respond-to('tablet') {
+    font-size: clamp(3rem, 10vw, 5rem);
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+  padding-bottom: 0.35rem; // align baseline with heading
+
+  @include respond-to('tablet') {
+    align-items: flex-start;
+  }
+}
+
+.link {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color $transition-base;
+
+  &:hover {
+    color: $cream;
+  }
+}
