@@ -14,6 +14,7 @@ export default function JsonLd() {
         sameAs: ['https://instagram.com/builtbyelle'],
         address: {
           '@type': 'PostalAddress',
+          addressLocality: 'Nottinghamshire',
           addressCountry: 'GB',
         },
         knowsAbout: [
