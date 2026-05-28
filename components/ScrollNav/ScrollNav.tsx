@@ -44,7 +44,6 @@ export default function ScrollNav() {
             className={`${styles.item} ${active === id ? styles.active : ''}`}
             aria-label={`Go to ${label}`}
           >
-            <span className={styles.number}>{String(i + 1).padStart(2, '0')}</span>
             <span className={styles.tick} />
             <span className={styles.label}>{label}</span>
           </a>
