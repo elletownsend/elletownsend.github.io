@@ -105,7 +105,7 @@ export default function SculptureViewer() {
   // This keeps the canvas dimensions stable and avoids a layout shift.
   if (!mounted) return <div className={styles.canvas} />;
 
-  const sculptureScale = isMobile ? 2.0 : 1.7;
+  const sculptureScale = isMobile ? 1.6 : 1.7;
   const cameraZ        = isMobile ? 4.5 : 5;
 
   return (

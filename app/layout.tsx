@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Space_Mono } from 'next/font/google';
+import { Cormorant_Garamond, IBM_Plex_Mono } from 'next/font/google';
 import './globals.scss';
 
 const cormorant = Cormorant_Garamond({
@@ -10,10 +10,10 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-const spaceMono = Space_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-space-mono',
+  variable: '--font-ibm-plex-mono',
   display: 'swap',
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${ibmPlexMono.variable}`}>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

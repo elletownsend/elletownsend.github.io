@@ -29,7 +29,7 @@
 
   @include respond-to('mobile') {
     overflow: visible;
-    padding-top: 3rem; // pull text closer to the top of the hero
+    padding-top: 0; // pull text closer to the top of the hero
   }
 }
 
@@ -74,7 +74,7 @@
   letter-spacing: -0.02em;
 
   em {
-    font-family: var(--font-space-mono), $font-mono;
+    font-family: var(--font-ibm-plex-mono), $font-mono;
     font-style: normal;
     font-weight: 400;
     font-size: 0.72em; // mono renders visually larger — scale down slightly to match line width
@@ -96,8 +96,13 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 // ── Sculpture column ──────────────────────────────────────────────────────────
@@ -118,10 +123,10 @@
   // then slide it down so the base bleeds into the About section below.
   @include respond-to('mobile') {
     position: absolute;
-    inset: 0;                     // fill the entire hero section
+    inset: 0; // fill the entire hero section
     height: 100%;
     transform: translateY(120px); // bleed 120px into the About section below
-    z-index: 0;                   // behind the text content (z-index: 1)
+    z-index: 0; // behind the text content (z-index: 1)
     order: unset;
   }
 }
