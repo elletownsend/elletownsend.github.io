@@ -105,6 +105,13 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 // ── Sculpture column ──────────────────────────────────────────────────────────
 .sculptureWrapper {
   width: 100%;

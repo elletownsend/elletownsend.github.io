@@ -93,10 +93,19 @@ export default function SculptureViewer() {
   // causes a server/client hydration mismatch.
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [prefersReduced, setPrefersReduced] = useState(false);
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
+
+    // Respect prefers-reduced-motion — disable auto-rotation if set
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReduced(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReduced(e.matches);
+    mq.addEventListener('change', handler);
+
     setMounted(true);
+    return () => mq.removeEventListener('change', handler);
   }, []);
 
   if (isLow) return <Fallback />;
@@ -124,7 +133,7 @@ export default function SculptureViewer() {
           <Sculpture scale={sculptureScale} />
           <SnapshotCapture />
           <OrbitControls
-            autoRotate
+            autoRotate={!prefersReduced}
             autoRotateSpeed={0.6}
             enableZoom={false}
             enablePan={false}
