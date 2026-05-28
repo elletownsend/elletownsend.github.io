@@ -34,7 +34,7 @@ export default function JsonLd() {
                 '@type': 'Service',
                 name: 'Branding and Identity Design',
                 description:
-                  'Strategic brand identities including logo suites, colour palettes, typography systems, and brand guidelines. Delivered in 2–3 weeks.',
+                  'Strategic brand identities including logo suites, colour palettes, typography systems, and brand guidelines. Delivered on a timeline that suits the client.',
               },
             },
             {
@@ -43,7 +43,7 @@ export default function JsonLd() {
                 '@type': 'Service',
                 name: 'Web Design and Development',
                 description:
-                  'Custom, mobile-responsive, SEO-optimised websites built on Framer, Squarespace, Webflow, or Next.js — tailored to your brand and goals. Most projects delivered in 4–6 weeks.',
+                  'Custom, mobile-responsive, SEO-optimised websites built on Framer, Squarespace, Webflow, or Next.js — tailored to your brand and goals, on a timeline that suits the client.',
               },
             },
             {

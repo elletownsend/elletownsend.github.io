@@ -5,13 +5,13 @@ const services = [
     name: 'Branding and identity',
     tagline: 'Making your business stand out.',
     description:
-      'A strong brand identity is how your business becomes trusted and memorable. I create complete brand identities — logo suites, colour palettes, typography systems, and brand guidelines — built around your business goals. Every element is designed to attract the right clients and give you a consistent, professional presence everywhere you show up. Most branding projects are delivered within 2–3 weeks.',
+      'A strong brand identity is how your business becomes trusted and memorable. I create complete brand identities — logo suites, colour palettes, typography systems, and brand guidelines — built around your business goals. Every element is designed to attract the right clients and give you a consistent, professional presence everywhere you show up. Delivered on a timeline that suits you.',
   },
   {
     name: 'Web design and development',
     tagline: 'A website tailored to your needs.',
     description:
-      'Custom websites designed and built to fit your brand and convert visitors into clients. I work with a range of platforms depending on your needs — from beautifully designed sites on Framer or Squarespace to bespoke builds using Next.js or Webflow — all delivered mobile-responsive and SEO-optimised from day one. Your site will look great, load fast, and be easy to manage. Most projects are delivered within 4–6 weeks.',
+      'Custom websites designed and built to fit your brand and convert visitors into clients. I work with a range of platforms depending on your needs — from beautifully designed sites on Framer or Squarespace to bespoke builds using Next.js or Webflow — all delivered mobile-responsive and SEO-optimised from day one. Your site will look great, load fast, and be easy to manage. Delivered on a timeline that suits your needs.',
   },
   {
     name: 'Digital design',
