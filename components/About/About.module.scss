@@ -8,6 +8,7 @@
   grid-template-columns: 42% 1fr;
   position: relative;
   overflow: hidden;
+  z-index: 1; // below hero so sculpture overlap sits on top
 
   @include respond-to('tablet') {
     grid-template-columns: 1fr;

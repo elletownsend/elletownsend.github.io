@@ -11,6 +11,7 @@
   padding: 0 $section-pad-h 0 7.5rem;
   position: relative;
   overflow: hidden;
+  z-index: 2; // sit above About so the overlapping sculpture paints on top
 
   @include respond-to('laptop') {
     // Nav hidden below 1024px — revert to standard padding
@@ -23,6 +24,12 @@
     grid-template-rows: auto auto;
     padding: 7rem $section-pad-h-mobile 3rem;
     gap: 2.5rem;
+    overflow: visible; // let sculpture bleed below into the About section
+  }
+
+  @include respond-to('mobile') {
+    overflow: visible;
+    padding-top: 3rem; // pull text closer to the top of the hero
   }
 }
 
@@ -37,6 +44,11 @@
   @include respond-to('tablet') {
     order: 1;
     padding-right: 0;
+  }
+
+  @include respond-to('mobile') {
+    position: relative; // ensure z-index applies above the absolute canvas
+    z-index: 5;
   }
 }
 
@@ -62,9 +74,12 @@
   letter-spacing: -0.02em;
 
   em {
-    font-style: italic;
-    font-weight: 300;
+    font-family: var(--font-space-mono), $font-mono;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.72em; // mono renders visually larger — scale down slightly to match line width
     color: $cream;
+    letter-spacing: -0.04em;
   }
 
   @include respond-to('tablet') {
@@ -95,13 +110,19 @@
   position: relative;
 
   @include respond-to('tablet') {
-    height: 55vw;
+    height: 60vw;
     order: 2;
-    max-height: 380px;
   }
 
+  // On mobile: take the canvas out of flow and stretch it behind the text,
+  // then slide it down so the base bleeds into the About section below.
   @include respond-to('mobile') {
-    height: 280px;
+    position: absolute;
+    inset: 0;                     // fill the entire hero section
+    height: 100%;
+    transform: translateY(120px); // bleed 120px into the About section below
+    z-index: 0;                   // behind the text content (z-index: 1)
+    order: unset;
   }
 }
 

@@ -27,11 +27,11 @@ function SnapshotCapture() {
 }
 
 // ── The actual 3‑D model ─────────────────────────────────────────────────────
-function Sculpture() {
+function Sculpture({ scale }: { scale: number }) {
   const { scene } = useGLTF('/models/terpsichore_lyran.glb');
   return (
     <Center>
-      <primitive object={scene} scale={2.6} />
+      <primitive object={scene} scale={scale} />
     </Center>
   );
 }
@@ -89,12 +89,29 @@ function Fallback() {
 export default function SculptureViewer() {
   const isLow = useLowBandwidth();
 
+  // Detect mobile after mount — never use typeof window at render time as it
+  // causes a server/client hydration mismatch.
+  const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+    setMounted(true);
+  }, []);
+
   if (isLow) return <Fallback />;
+
+  // Render a transparent placeholder until we know the viewport width.
+  // This keeps the canvas dimensions stable and avoids a layout shift.
+  if (!mounted) return <div className={styles.canvas} />;
+
+  const sculptureScale = isMobile ? 2.0 : 1.7;
+  const cameraZ        = isMobile ? 4.5 : 5;
 
   return (
     <div className={styles.canvas}>
       <Canvas
-        camera={{ position: [0, 0, 4], fov: 50 }}
+        camera={{ position: [0, 0.15, cameraZ], fov: 46 }}
         gl={{ preserveDrawingBuffer: true, alpha: true }}
         style={{ background: 'transparent' }}
       >
@@ -104,13 +121,14 @@ export default function SculptureViewer() {
         <directionalLight position={[0, -4, 2]}  intensity={0.3} color="#ffffff" />
 
         <Suspense fallback={null}>
-          <Sculpture />
+          <Sculpture scale={sculptureScale} />
           <SnapshotCapture />
           <OrbitControls
             autoRotate
             autoRotateSpeed={0.6}
             enableZoom={false}
             enablePan={false}
+            target={[0, -0.05, 0]}
             minPolarAngle={Math.PI / 5}
             maxPolarAngle={(2.5 * Math.PI) / 4}
           />

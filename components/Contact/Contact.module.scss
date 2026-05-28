@@ -96,10 +96,7 @@
   }
 
   @include respond-to('tablet') {
-    width: 320px;
-    height: 243px;
-    top: 5%;
-    right: -100px;
+    display: none;
   }
 }
 
