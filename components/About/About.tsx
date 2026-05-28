@@ -7,7 +7,7 @@ export default function About() {
       {/* ── Left: editorial photo ── */}
       <div className={styles.imageCol}>
         <Image
-          src="/images/palace-interior-2.png"
+          src="/images/palace-interior-2.webp"
           alt="Ornate palace interior"
           fill
           sizes="(max-width: 768px) 100vw, 45vw"
@@ -18,6 +18,9 @@ export default function About() {
 
       {/* ── Right: bio text ── */}
       <div className={styles.contentCol}>
+        {/* Visually hidden H2 preserves heading hierarchy (H1 is in Hero) */}
+        <h2 className="sr-only">About Elle Townsend</h2>
+
         <div className={styles.block}>
           <h3 className={styles.label}>Bio</h3>
           <p className={styles.body}>
@@ -42,7 +45,7 @@ export default function About() {
       {/* ── Collage overlays ── */}
       <div className={styles.tornBookshelf} aria-hidden="true">
         <Image
-          src="/images/torn-bookshelf.png"
+          src="/images/torn-bookshelf.webp"
           alt=""
           fill
           style={{ objectFit: 'fill' }}

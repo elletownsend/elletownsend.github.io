@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       {/* Full-bleed background photo */}
       <Image
-        src="/images/palace-interior.png"
+        src="/images/palace-interior.webp"
         alt=""
         fill
         sizes="100vw"
@@ -20,7 +20,7 @@ export default function Contact() {
       {/* Torn architecture collage — top-right corner */}
       <div className={styles.tornArchitecture} aria-hidden="true">
         <Image
-          src="/images/torn-architecture.png"
+          src="/images/torn-architecture.webp"
           alt=""
           fill
           style={{ objectFit: 'contain', objectPosition: 'top left' }}

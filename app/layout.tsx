@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, IBM_Plex_Mono } from 'next/font/google';
+import JsonLd from './JsonLd';
 import './globals.scss';
 
 const cormorant = Cormorant_Garamond({
@@ -18,14 +19,28 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Elle Townsend | Web Designer & Developer',
+  title: 'Freelance Web Designer & Developer UK | Elle Townsend',
   description:
-    "I'm a creative at heart, weaving digital masterpieces for brands of all sizes. Web designer & developer based in the UK.",
+    'Freelance web designer and developer based in the UK, helping small businesses get beautiful, conversion-focused websites and brand identities. Get in touch.',
+  alternates: {
+    canonical: 'https://elletownsend.co.uk/',
+  },
   openGraph: {
-    title: 'Elle Townsend | Web Designer & Developer',
-    description: 'Gorgeous websites, tailored to your business.',
-    url: 'https://builtbyelle.com',
+    title: 'Freelance Web Designer & Developer UK | Elle Townsend',
+    description:
+      'Beautiful, conversion-focused websites and brand identities for small businesses. Based in the UK.',
+    url: 'https://elletownsend.co.uk',
+    siteName: 'Elle Townsend',
+    locale: 'en_GB',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@builtbyelle',
+    creator: '@builtbyelle',
+    title: 'Freelance Web Designer & Developer UK | Elle Townsend',
+    description:
+      'Beautiful websites and brand identities for small businesses, built by Elle.',
   },
 };
 
@@ -35,8 +50,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${ibmPlexMono.variable}`}>
-      <body suppressHydrationWarning>{children}</body>
+    <html lang="en-GB" className={`${cormorant.variable} ${ibmPlexMono.variable}`}>
+      <body suppressHydrationWarning>
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }
