@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://elletownsend.co.uk/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
   openGraph: {
     title: 'Freelance Web Designer & Developer UK | Elle Townsend',
     description:
@@ -33,6 +41,14 @@ export const metadata: Metadata = {
     siteName: 'Elle Townsend',
     locale: 'en_GB',
     type: 'website',
+    images: [
+      {
+        url: 'https://elletownsend.co.uk/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Elle Townsend — Freelance Web Designer & Developer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -41,6 +57,7 @@ export const metadata: Metadata = {
     title: 'Freelance Web Designer & Developer UK | Elle Townsend',
     description:
       'Beautiful websites and brand identities for small businesses, built by Elle.',
+    images: ['https://elletownsend.co.uk/og-image.jpg'],
   },
 };
 
