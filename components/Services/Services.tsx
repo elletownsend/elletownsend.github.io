@@ -11,7 +11,7 @@ const services = [
     name: 'Web design and development',
     tagline: 'A website tailored to your needs.',
     description:
-      'Custom websites designed and built to fit your brand and convert visitors into clients. I work with a range of platforms depending on your needs — from content-managed sites on WordPress or Webflow to bespoke builds using Next.js — all delivered mobile-responsive and SEO-optimised from day one. Your site will look great, load fast, and be easy to manage. Most projects are delivered within 4–6 weeks.',
+      'Custom websites designed and built to fit your brand and convert visitors into clients. I work with a range of platforms depending on your needs — from beautifully designed sites on Framer or Squarespace to bespoke builds using Next.js or Webflow — all delivered mobile-responsive and SEO-optimised from day one. Your site will look great, load fast, and be easy to manage. Most projects are delivered within 4–6 weeks.',
   },
   {
     name: 'Digital design',

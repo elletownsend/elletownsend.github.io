@@ -43,7 +43,7 @@ export default function JsonLd() {
                 '@type': 'Service',
                 name: 'Web Design and Development',
                 description:
-                  'Custom, mobile-responsive, SEO-optimised websites built to reflect your brand and convert visitors into clients. Most projects delivered in 4–6 weeks.',
+                  'Custom, mobile-responsive, SEO-optimised websites built on Framer, Squarespace, Webflow, or Next.js — tailored to your brand and goals. Most projects delivered in 4–6 weeks.',
               },
             },
             {
