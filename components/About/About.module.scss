@@ -22,6 +22,12 @@
   position: relative;
   overflow: hidden;
 
+  // The PNG has a 1-2px white border baked into the file's top and bottom edges.
+  // Scale the img slightly so overflow:hidden clips those rows away.
+  img {
+    transform: scale(1.02);
+  }
+
   @include respond-to('tablet') {
     min-height: 50vw;
   }
