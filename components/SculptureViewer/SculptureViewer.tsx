@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState, Suspense, useRef } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
-import { useGLTF, OrbitControls, Center, Environment } from '@react-three/drei';
+import { useGLTF, OrbitControls, Center } from '@react-three/drei';
 import styles from './SculptureViewer.module.scss';
 
 const CACHE_KEY = 'sculpture-snapshot-v1';
@@ -31,7 +31,7 @@ function Sculpture() {
   const { scene } = useGLTF('/models/terpsichore_lyran.glb');
   return (
     <Center>
-      <primitive object={scene} />
+      <primitive object={scene} scale={2.6} />
     </Center>
   );
 }

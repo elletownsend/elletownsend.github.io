@@ -23,7 +23,7 @@ export default function Contact() {
           src="/images/torn-architecture.png"
           alt=""
           fill
-          style={{ objectFit: 'contain', objectPosition: 'top right' }}
+          style={{ objectFit: 'contain', objectPosition: 'top left' }}
         />
       </div>
 

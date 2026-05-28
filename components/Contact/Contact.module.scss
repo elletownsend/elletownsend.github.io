@@ -76,26 +76,30 @@
   }
 }
 
-// ── Torn architecture collage — top-right corner ─────────────────────────────
+// ── Torn architecture collage ─────────────────────────────────────────────────
+// Image is 809×615 (1.315:1 landscape). In the design the piece is anchored
+// to the right side and bleeds off both the right edge and the bottom, so
+// only the torn left edge + upper building area is visible on-screen.
 .tornArchitecture {
   position: absolute;
-  top: -30px;
-  right: -30px;
-  width: 420px;
-  height: 520px;
+  top: 5%;
+  right: -260px;  // bleed most of the piece off the right edge
+  width: 700px;
+  height: 532px;  // 700 / 1.315 ≈ 532 (matches image aspect ratio)
   pointer-events: none;
   z-index: 2;
 
   @include respond-to('laptop') {
-    width: 320px;
-    height: 400px;
+    width: 540px;
+    height: 411px;
+    right: -200px;
   }
 
   @include respond-to('tablet') {
-    width: 220px;
-    height: 280px;
-    top: -10px;
-    right: -10px;
+    width: 320px;
+    height: 243px;
+    top: 5%;
+    right: -100px;
   }
 }
 
