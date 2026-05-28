@@ -30,10 +30,10 @@ export default function Services() {
         {services.map((s) => (
           <article key={s.name} className={styles.card}>
             <p className={styles.description}>{s.description}</p>
-            <footer className={styles.footer}>
-              <strong className={styles.name}>{s.name}</strong>
-              <em className={styles.tagline}>{s.tagline}</em>
-            </footer>
+            <div className={styles.footer}>
+              <h3 className={styles.name}>{s.name}</h3>
+              <p className={styles.tagline}>{s.tagline}</p>
+            </div>
           </article>
         ))}
       </div>

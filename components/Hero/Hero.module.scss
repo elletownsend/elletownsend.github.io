@@ -59,7 +59,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.65); // raised from 0.4 → ~5.1:1 contrast on $black
   line-height: 2;
   padding-left: 1rem;
   border-left: 1px solid rgba(255, 255, 255, 0.15);

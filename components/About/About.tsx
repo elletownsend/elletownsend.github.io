@@ -19,7 +19,7 @@ export default function About() {
       {/* ── Right: bio text ── */}
       <div className={styles.contentCol}>
         <div className={styles.block}>
-          <span className={styles.label}>Bio</span>
+          <h3 className={styles.label}>Bio</h3>
           <p className={styles.body}>
             I&rsquo;m a creative at heart, weaving digital masterpieces for brands of all
             sizes. From small businesses to established brands, I help bring your vision
@@ -29,7 +29,7 @@ export default function About() {
         </div>
 
         <div className={styles.block}>
-          <span className={styles.label}>What I Do Best</span>
+          <h3 className={styles.label}>What I Do Best</h3>
           <ul className={styles.list}>
             <li>Brand identity</li>
             <li>Web design</li>

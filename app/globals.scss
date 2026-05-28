@@ -34,6 +34,13 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid $cream;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 :root {
   --font-cormorant: 'Cormorant Garamond', Georgia, serif;
   --font-ibm-plex-mono: 'IBM Plex Mono', 'Courier New', monospace;

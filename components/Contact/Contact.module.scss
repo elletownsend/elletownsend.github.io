@@ -105,7 +105,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.90); // raised from 0.55 → ~12:1 contrast on dark overlay
   transition: color $transition-base;
 
   &:hover {

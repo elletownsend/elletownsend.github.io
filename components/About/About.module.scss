@@ -62,9 +62,10 @@
 .label {
   font-family: $font-mono;
   font-size: 0.6rem;
+  font-weight: normal; // override browser h3 bold default
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(34, 34, 34, 0.5);
+  color: rgba(34, 34, 34, 0.75); // raised from 0.5 → ~5.5:1 contrast on $cream
   padding-bottom: 0.6rem;
   border-bottom: 1px solid rgba(34, 34, 34, 0.12);
 }

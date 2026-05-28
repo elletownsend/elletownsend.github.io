@@ -37,12 +37,13 @@ export default function ScrollNav() {
   return (
     <nav className={styles.nav} aria-label="Page sections">
       <div className={styles.track}>
-        {sections.map(({ id, label }, i) => (
+        {sections.map(({ id, label }) => (
           <a
             key={id}
             href={`#${id}`}
             className={`${styles.item} ${active === id ? styles.active : ''}`}
-            aria-label={`Go to ${label}`}
+            aria-label={`Go to ${label} section`}
+            aria-current={active === id ? 'true' : undefined}
           >
             <span className={styles.tick} />
             <span className={styles.label}>{label}</span>

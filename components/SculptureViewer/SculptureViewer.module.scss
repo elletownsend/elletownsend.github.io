@@ -5,7 +5,14 @@
   height: 100%;
 
   canvas {
-    outline: none;
+    // Suppress outline on mouse/touch interaction but preserve it for keyboard users
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.7);
+      outline-offset: 2px;
+    }
   }
 }
 
