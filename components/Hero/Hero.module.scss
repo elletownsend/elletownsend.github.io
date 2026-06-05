@@ -1,0 +1,145 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  min-height: 100vh;
+  background-color: $black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  // Extra left padding reserves space for the fixed scroll nav (visible >1024px)
+  padding: 0 $section-pad-h 0 7.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 2; // sit above About so the overlapping sculpture paints on top
+
+  @include respond-to('laptop') {
+    // Nav hidden below 1024px — revert to standard padding
+    padding: 0 2rem 0 2rem;
+    grid-template-columns: 55% 1fr;
+  }
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 7rem $section-pad-h-mobile 3rem;
+    gap: 2.5rem;
+    overflow: visible; // let sculpture bleed below into the About section
+  }
+
+  @include respond-to('mobile') {
+    overflow: visible;
+    padding-top: 0; // pull text closer to the top of the hero
+  }
+}
+
+// ── Text column ───────────────────────────────────────────────────────────────
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  z-index: 1;
+  padding-right: 2rem;
+
+  @include respond-to('tablet') {
+    order: 1;
+    padding-right: 0;
+  }
+
+  @include respond-to('mobile') {
+    position: relative; // ensure z-index applies above the absolute canvas
+    z-index: 5;
+  }
+}
+
+.nameTag {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65); // raised from 0.4 → ~5.1:1 contrast on $black
+  line-height: 2;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.headline {
+  font-family: var(--font-cormorant), $font-serif;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+  font-weight: 300;
+  line-height: 1.02;
+  color: $white;
+  letter-spacing: -0.02em;
+
+  em {
+    font-family: var(--font-ibm-plex-mono), $font-mono;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.72em; // mono renders visually larger — scale down slightly to match line width
+    color: $cream;
+    letter-spacing: -0.04em;
+  }
+
+  @include respond-to('tablet') {
+    font-size: clamp(2.8rem, 8vw, 4rem);
+  }
+}
+
+.cursor {
+  display: inline-block;
+  color: $cream;
+  font-style: normal;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+// ── Sculpture column ──────────────────────────────────────────────────────────
+.sculptureWrapper {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @include respond-to('tablet') {
+    height: 60vw;
+    order: 2;
+  }
+
+  // On mobile: take the canvas out of flow and stretch it behind the text,
+  // then slide it down so the base bleeds into the About section below.
+  @include respond-to('mobile') {
+    position: absolute;
+    inset: 0; // fill the entire hero section
+    height: 100%;
+    transform: translateY(120px); // bleed 120px into the About section below
+    z-index: 0; // behind the text content (z-index: 1)
+    order: unset;
+  }
+}
+
+.sculptureLoading {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}

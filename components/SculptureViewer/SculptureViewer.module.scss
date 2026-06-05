@@ -1,0 +1,40 @@
+@use '../../styles/variables' as *;
+
+.canvas {
+  width: 100%;
+  height: 100%;
+
+  canvas {
+    // Suppress outline on mouse/touch interaction but preserve it for keyboard users
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.7);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1.05);
+  }
+}
+
+.placeholderLabel {
+  font-family: $font-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.15);
+}

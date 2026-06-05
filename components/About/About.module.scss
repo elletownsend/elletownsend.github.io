@@ -1,0 +1,123 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.about {
+  min-height: 85vh;
+  background-color: $cream;
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; // below hero so sculpture overlap sits on top
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vw auto;
+    min-height: auto;
+  }
+}
+
+// ── Photo column ──────────────────────────────────────────────────────────────
+.imageCol {
+  position: relative;
+  overflow: hidden;
+
+  // The PNG has a 1-2px white border baked into the file's top and bottom edges.
+  // Scale the img slightly so overflow:hidden clips those rows away.
+  img {
+    transform: scale(1.02);
+  }
+
+  @include respond-to('tablet') {
+    min-height: 50vw;
+  }
+}
+
+// ── Text column ───────────────────────────────────────────────────────────────
+.contentCol {
+  padding: 5.5rem 4rem 5.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+
+  @include respond-to('laptop') {
+    padding: 4rem 2.5rem;
+  }
+
+  @include respond-to('tablet') {
+    padding: 3rem $section-pad-h-mobile;
+    gap: 2.5rem;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.label {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  font-weight: normal; // override browser h3 bold default
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(34, 34, 34, 0.75); // raised from 0.5 → ~5.5:1 contrast on $cream
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.12);
+}
+
+.body {
+  font-family: var(--font-cormorant), $font-serif;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  line-height: 1.75;
+  color: $text-dark;
+  max-width: 40ch;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+
+  li {
+    list-style: none;
+    font-family: var(--font-cormorant), $font-serif;
+    font-size: clamp(1rem, 1.3vw, 1.05rem);
+    color: $text-dark;
+    padding-left: 1.1rem;
+    position: relative;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: rgba(34, 34, 34, 0.4);
+    }
+  }
+}
+
+// ── Collage elements ──────────────────────────────────────────────────────────
+
+// Torn bookshelf strip — full-height on the far right edge
+.tornBookshelf {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  pointer-events: none;
+  z-index: 3;
+
+  @include respond-to('laptop') {
+    width: 120px;
+  }
+
+  @include respond-to('tablet') {
+    display: none;
+  }
+}

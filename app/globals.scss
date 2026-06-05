@@ -1,0 +1,60 @@
+@use '../styles/variables' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-sans;
+  color: $text-dark;
+  background-color: $black;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Visually hidden but accessible to screen readers and crawlers
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid $cream;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-ibm-plex-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
