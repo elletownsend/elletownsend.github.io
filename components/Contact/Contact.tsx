@@ -40,12 +40,6 @@ export default function Contact() {
           >
             @builtbyelle
           </a>
-          <a
-            href="mailto:townsend.e.b1@gmail.com"
-            className={styles.link}
-          >
-            Email me
-          </a>
         </div>
       </div>
     </section>
