@@ -3,28 +3,28 @@ import styles from './Services.module.scss';
 const services = [
   {
     name: 'Branding and identity',
-    tagline: 'Making your business stand out.',
+    tagline: 'Identity that holds together.',
     description:
-      'A strong brand identity is how your business becomes trusted and memorable. I create complete brand identities — logo suites, colour palettes, typography systems, and brand guidelines — built around your business goals. Every element is designed to attract the right clients and give you a consistent, professional presence everywhere you show up. Delivered on a timeline that suits you.',
+      'Brand identity is work I really enjoy. I build complete systems — logo suites, colour palettes, typography, and brand guidelines — designed to hold together wherever they show up, from a business card to a social post. The goal is consistency and clarity, not just something that looks nice.',
   },
   {
     name: 'Web design and development',
-    tagline: 'A website tailored to your needs.',
+    tagline: 'Websites that actually work.',
     description:
-      'Custom websites designed and built to fit your brand and convert visitors into clients. I work with a range of platforms depending on your needs — from beautifully designed sites on Framer or Squarespace to bespoke builds using Next.js or Webflow — all delivered mobile-responsive and SEO-optimised from day one. Your site will look great, load fast, and be easy to manage. Delivered on a timeline that suits your needs.',
+      'I design and build websites that fit the brand properly — not just visually, but in how they\'re structured and how they work. I\'m comfortable across Framer, Squarespace, Webflow, and Next.js, so the platform choice comes down to what\'s actually right for the project. Everything comes out mobile-responsive and SEO-considered from the start.',
   },
   {
     name: 'Digital design',
     tagline: 'Show up, everywhere.',
     description:
-      'On-brand digital assets that help you show up with clarity wherever your audience is. From social media graphics and email templates to launch visuals and marketing materials — every piece is aligned with your brand identity and designed to increase visibility and drive engagement. Offered as one-off projects or as an ongoing design partnership.',
+      'Social graphics, email templates, launch visuals, marketing materials — the assets that keep a brand looking consistent in everyday use. I enjoy this kind of work. It\'s detail-oriented, and doing it well is what makes everything else feel more intentional and put-together.',
   },
 ];
 
 export default function Services() {
   return (
     <section id="services" className={styles.services}>
-      <h2 className={styles.heading}>What I Offer</h2>
+      <h2 className={styles.heading}>What I Do</h2>
 
       <div className={styles.grid}>
         {services.map((s) => (

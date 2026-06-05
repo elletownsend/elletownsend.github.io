@@ -21,7 +21,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: 'Freelance Web Designer & Developer UK | Elle Townsend',
   description:
-    'Freelance web designer and developer based in the UK, helping small businesses get beautiful, conversion-focused websites and brand identities. Get in touch.',
+    'Freelance web designer and developer based in the UK, working with small businesses on websites, brand identity, and digital design. Get in touch.',
   alternates: {
     canonical: 'https://elletownsend.co.uk/',
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Freelance Web Designer & Developer UK | Elle Townsend',
     description:
-      'Beautiful, conversion-focused websites and brand identities for small businesses. Based in the UK.',
+      'Websites, brand identity, and digital design for small businesses. Based in the UK.',
     url: 'https://elletownsend.co.uk',
     siteName: 'Elle Townsend',
     locale: 'en_GB',

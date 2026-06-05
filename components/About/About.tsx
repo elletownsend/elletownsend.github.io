@@ -24,10 +24,10 @@ export default function About() {
         <div className={styles.block}>
           <h3 className={styles.label}>Bio</h3>
           <p className={styles.body}>
-            I&rsquo;m a creative at heart, weaving digital masterpieces for brands of all
-            sizes. From small businesses to established brands, I help bring your vision
-            to life through strategic design. I work with clients across various industries,
-            delivering designs that inspire, engage, and create results.
+            I&rsquo;m a designer and developer with a genuine interest in both the visual
+            and technical side of things. I&rsquo;ve worked with small businesses and growing
+            brands across different industries — usually when they need their visual presence
+            to properly reflect who they are. I care about the craft, and it shows in the details.
           </p>
         </div>
 
