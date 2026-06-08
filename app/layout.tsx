@@ -19,9 +19,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Freelance Web Designer & Developer UK | Elle Townsend',
+  title: 'Web Designer & Developer UK | Elle Townsend',
   description:
-    'Freelance web designer and developer based in the UK, working with small businesses on websites, brand identity, and digital design. Get in touch.',
+    'Web designer and developer based in the UK, working with small businesses on websites, brand identity, and digital design. Get in touch.',
   alternates: {
     canonical: 'https://elletownsend.co.uk/',
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   openGraph: {
-    title: 'Freelance Web Designer & Developer UK | Elle Townsend',
+    title: 'Web Designer & Developer UK | Elle Townsend',
     description:
       'Websites, brand identity, and digital design for small businesses. Based in the UK.',
     url: 'https://elletownsend.co.uk',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: 'https://elletownsend.co.uk/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Elle Townsend — Freelance Web Designer & Developer',
+        alt: 'Elle Townsend — Web Designer & Developer',
       },
     ],
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@builtbyelle',
     creator: '@builtbyelle',
-    title: 'Freelance Web Designer & Developer UK | Elle Townsend',
+    title: 'Web Designer & Developer UK | Elle Townsend',
     description:
       'Beautiful websites and brand identities for small businesses, built by Elle.',
     images: ['https://elletownsend.co.uk/og-image.jpg'],

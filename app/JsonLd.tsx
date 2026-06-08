@@ -9,7 +9,7 @@ export default function JsonLd() {
         name: 'Elle Townsend',
         url: 'https://elletownsend.co.uk',
         description:
-          'Freelance web designer and developer based in the UK, specialising in websites, brand identity, and digital design for small and medium-sized businesses.',
+          'Web designer and developer based in the UK, specialising in websites, brand identity, and digital design for small and medium-sized businesses.',
         email: 'townsend.e.b1@gmail.com',
         sameAs: ['https://instagram.com/builtbyelle'],
         address: {
